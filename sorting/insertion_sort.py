@@ -1,15 +1,19 @@
 def insertion_sort(list):
 
     for i in range(1, len(list)):
+
         cur = list[i]
-        j = i
-        while j > 0 and list[j-1] > cur:
-            list[j] = list[j-1]
+
+        j = i-1
+        while j >= 0 and cur < list[j]:
+            list[j + 1] = list[j]
             j -= 1
-            list[j] = cur
+        list[j + 1] = cur
+
     return list
 
 def main():
+
     nums = [7,3,1,2]
 
     print(insertion_sort(nums))
