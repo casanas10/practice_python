@@ -74,9 +74,21 @@ def k_occurences_using_two_bineary_search(nums, k):
     return last_occur - first_occur + 1
 
 
+def find_smallest_and_largest_in_sorted_array(nums, k):
+    # get the index of the first occurences
+    first_occur = find_first(nums, 0, len(nums) - 1, k)
 
+    # get the index of the last occurences
+    last_occur = find_last(nums, 0, len(nums) - 1, k)
+
+    return  [first_occur, last_occur]
 
 nums = [1,1,2,2,2,2,3]
 k = 2
 print(k_occurences_linear_scan(nums, k))
 print(k_occurences_using_two_bineary_search(nums, k))
+
+
+nums = [2,2]
+k = 2
+print(find_smallest_and_largest_in_sorted_array(nums, k))

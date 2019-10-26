@@ -1,5 +1,8 @@
 def search(nums, target):
 
+    '''
+    Use Bineary Search to find the pivot elements
+    '''
     def find_rotate_index(left, right):
         if nums[left] < nums[right]:
             return 0
@@ -51,12 +54,37 @@ def search(nums, target):
     return search(0, rotate_index)
 
 
+def approach2(nums, target):
+
+    left, right = 0, len(nums) - 1
+    while left <= right:
+
+        mid = left + (right - left) // 2
+
+        if nums[mid] == target:
+            return mid
+        #if mid element is bigger than leftmost elem
+        elif nums[mid] >= nums[left]:
+            if target < nums[mid] and target >= nums[left]:
+                right = mid - 1
+            else:
+                left = mid + 1
+        # nums mid is smaller than first element which means not rotated
+        else:
+            if target > nums[mid] and target <= nums[right]:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+    return -1
+
+
 def main():
 
-    nums = [1,3,5]
-    target = 0
+    nums = [4,5,6,7,0,1,2]
+    target = 4
 
-    print(search(nums, target))
+    print(approach2(nums, target))
 
 if __name__ == "__main__":
     main()

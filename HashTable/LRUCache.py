@@ -4,17 +4,10 @@ from collections import OrderedDict
 class LRUCache(object):
 
     def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
         self.cache = OrderedDict()
         self.capacity = capacity
 
     def get(self, key):
-        """
-        :type key: int
-        :rtype: int
-        """
         if key not in self.cache:
             return -1
 
@@ -22,11 +15,6 @@ class LRUCache(object):
         return self.cache[key]
 
     def put(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: None
-        """
         if key in self.cache:
             self.cache.move_to_end(key)
         self.cache[key] = value
