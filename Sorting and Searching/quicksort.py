@@ -1,9 +1,3 @@
-def swap(s, t):
-    temp = s
-    s = t
-    t = temp
-    return s, t
-
 def partition(list, left, right):
 
     i = (left - 1)
@@ -14,9 +8,9 @@ def partition(list, left, right):
         if list[j] < pivot:
             i = i + 1
 
-            list[i], list[j] = swap(list[i], list[j])
+            list[i], list[j] = list[j], list[i]
 
-    list[i+1], list[right] = swap(list[i+1], list[right])
+    list[i+1], list[right] = list[right], list[i+1]
 
     return (i + 1)
 

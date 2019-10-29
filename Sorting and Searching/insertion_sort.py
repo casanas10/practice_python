@@ -1,3 +1,7 @@
+'''
+Insertion Sort - builds on sorted array one element at a time by comparing each new element to
+each sorted elem and insterting into correct location
+'''
 def insertion_sort(list):
 
     for i in range(1, len(list)):

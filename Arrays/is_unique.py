@@ -63,7 +63,7 @@ def sets_is_unique(str):
 
 '''
 Other options 
-1. Sort and check adjacent chars (Sorting takes O(n log n) time and O(n) space)
+1. Sort and check adjacent chars (Sorting and Searching takes O(n log n) time and O(n) space)
 '''
 
 
